@@ -1,0 +1,25 @@
+{{define "epg"}}
+    <ul>
+        {{ range $key, $programmesByDate := . }}
+            <strong>{{ $key }}</strong>
+            {{ range $index, $programme := $programmesByDate }}
+            <li>
+                {{ $programme }}
+            </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+{{end}}
+
+{{define "epg2"}}
+        {{ range $key, $programmesByDate := . }}
+        <div style="width: 100%; overflow: hidden;">
+            <strong>{{ $key }}</strong><br/>
+            {{ range $index, $programme := $programmesByDate }}
+                <div class="programme" title="{{ $programme.Title }} @ {{ $programme.Start | formatTime }}" style="{{ $programme.DivStyle | css }}">
+                
+                </div>
+            {{ end }}
+        </div>
+        {{ end }}
+{{end}}

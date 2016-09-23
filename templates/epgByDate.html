@@ -1,0 +1,8 @@
+{{template "header"}}
+
+{{ range $date, $programmes := . }}
+    <li>
+        {{$date}}
+        {{template "epg" $programmes}}
+    </li>
+{{ end }}

@@ -1,0 +1,8 @@
+{{template "header"}}
+
+{{ range $channelName, $programmes := . }}
+    <li>
+        {{$channelName}}
+        {{template "epg" $programmes}}
+    </li>
+{{ end }}
