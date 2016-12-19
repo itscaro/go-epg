@@ -12,12 +12,13 @@
 {{end}}
 
 {{define "epg2"}}
+<h1>EPG</h1>
         {{ range $key, $programmesByDate := . }}
         <div style="width: 100%; overflow: hidden;">
             <strong>{{ $key }}</strong><br/>
             {{ range $index, $programme := $programmesByDate }}
                 <div class="programme" title="{{ $programme.Title }} @ {{ $programme.Start | formatTime }}" style="{{ $programme.DivStyle | css }}">
-                
+                    <img src={{ $programme.RawProgramme.Icon.Attr_src }}>
                 </div>
             {{ end }}
         </div>
