@@ -16,6 +16,7 @@ type Category struct {
 type Channel struct {
 	Attr_id      string          `xml:" id,attr"  json:",omitempty"`
 	Display_name []*Display_name `xml:" display-name,omitempty" json:"display-name,omitempty"`
+	Icon         *Icon           `xml:" icon,omitempty" json:"icon,omitempty"`
 }
 
 type Credits struct {
@@ -69,6 +70,7 @@ type Programme struct {
 	Star_rating  *Star_rating   `xml:" star-rating,omitempty" json:"star-rating,omitempty"`
 	Sub_title    *Sub_title     `xml:" sub-title,omitempty" json:"sub-title,omitempty"`
 	Title        *Title         `xml:" title,omitempty" json:"title,omitempty"`
+	Icon         *Icon          `xml:" icon,omitempty" json:"icon,omitempty"`
 }
 
 type Rating struct {
@@ -104,6 +106,10 @@ type Tv struct {
 
 type Value struct {
 	Text string `xml:",chardata" json:",omitempty"`
+}
+
+type Icon struct {
+	Attr_src string `xml:"src,attr" json:",omitempty"`
 }
 
 ///////////////////////////
